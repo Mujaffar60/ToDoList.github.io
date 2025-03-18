@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="to-do-list.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    
+    <div class="todo-container">
+
+        <div class="todo-header">
+            <h2>To-Do List</h2>
+        </div>
+
+        <div class="todo-input">
+            <input type="text" id="new-task" placeholder="Add a new task...">
+            <button id="add-task">Add</button>
+        </div>
+
+        <ul class="todo-list" id="task-list">
+            </ul>
+
+    </div>
+
+
+
+<script src="to-do-list.js"></script>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy To-Do List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .todo-container {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .todo-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .todo-input {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .todo-input input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .todo-input button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .todo-item:last-child {
+            border-bottom: none;
+        }
+
+        .todo-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .todo-item span {
+            flex-grow: 1;
+            word-break: break-all;
+        }
+
+        .todo-item .actions {
+            display: flex;
+        }
+
+        .todo-item .actions button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .todo-item .actions button.edit {
+            color: #007bff;
+        }
+
+        .todo-item .actions button.delete {
+            color: #dc3545;
+        }
+        .
+        .editing {
+            background-color: #f0f8ff;
+        }
+        .editing input[type="text"]{
+            flex-grow: 1;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <div class="todo-header">
+            <h2>My To-Do List</h2>
+        </div>
+        <div class="todo-input">
+            <input type="text" id="new-task" placeholder="Add a new task...">
+            <button id="add-task">Add</button>
+        </div>
+        <ul class="todo-list" id="task-list">
+            </ul>
+    </div>
+
+    <script>
+        const taskInput = document.getElementById('new-task');
+        const addButton = document.getElementById('add-task');
+        const taskList = document.getElementById('task-list');
+
+        addButton.addEventListener('click', addTask);
+
+        function addTask() {
+            const taskText = taskInput.value.trim();
+            if (taskText !== '') {
+                createTaskElement(taskText);
+                taskInput.value = '';
+            }
+        }
+
+        function createTaskElement(taskText) {
+            const listItem = document.createElement('li');
+            listItem.classList.add('todo-item');
+
+            listItem.innerHTML = `
+                <input type="checkbox">
+                <span>${taskText}</span>
+                <div class="actions">
+                    <button class="edit">✏️</button>
+                    <button class="delete">🗑️</button>
+                </div>
+            `;
+
+            taskList.appendChild(listItem);
+
+            const deleteButton = listItem.querySelector('.delete');
+            deleteButton.addEventListener('click', () => {
+                listItem.remove();
+            });
+
+            const editButton = listItem.querySelector('.edit');
+            editButton.addEventListener('click', () => {
+                editTask(listItem);
+            });
+            const checkbox = listItem.querySelector('input[type="checkbox"]');
+            const taskSpan = listItem.querySelector('span');
+
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    taskSpan.style.textDecoration = 'line-through';
+                } else {
+                    taskSpan.style.textDecoration = 'none';
+                }
+            });
+        }
+        function editTask(listItem){
+            const taskSpan = listItem.querySelector('span');
+            const originalText = taskSpan.textContent;
+            listItem.classList.add('editing');
+            taskSpan.innerHTML = `<input type="text" value="${originalText}">`;
+            const inputField = taskSpan.querySelector('input[type="text"]');
+            inputField.focus();
+
+            inputField.addEventListener('blur', () => {
+                const newText = inputField.value.trim();
+                if (newText !== '') {
+                    taskSpan.textContent = newText;
+                } else {
+                    taskSpan.textContent = originalText;
+                }
+                listItem.classList.remove('editing');
+
+            });
+            inputField.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    inputField.blur();
+                }
+            });
+        }
+    </script>
+</body>
+</html> -->

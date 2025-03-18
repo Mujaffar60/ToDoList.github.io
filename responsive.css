@@ -1,0 +1,24 @@
+
+@media only screen and ( max-width:600px ){
+    body{
+        height: 93vh;
+    }
+    .todo-container {
+        width: 87%;
+    }
+
+    .todo-header{
+        position:sticky;
+        top: 10px;
+    }
+    .todo-input{
+        top:60px;
+        position:sticky;
+    }
+    .todo-list li{
+        top: 130px;
+        position: sticky;
+    }
+}
+
+

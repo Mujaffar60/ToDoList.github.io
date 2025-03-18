@@ -1,0 +1,114 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background:linear-gradient(135deg, #e0c3fc,#8ec5fc);
+}
+
+.todo-container {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.todo-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6c5ce7;
+    position: relative;
+}
+
+.todo-input {
+    display: flex;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.todo-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.todo-input button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+    background-color: #6c5ce7;
+}
+.todo-input button:hover{
+    background-color: #6c5ce7c5;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.todo-list li input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.todo-list li span {
+    flex-grow: 1;
+}
+
+.todo-list li button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.todo-list li .edit {
+    background-color: #008CBA;
+    color: white;
+}
+
+.todo-list li .edit:hover {
+    background-color: #008bbab6;
+}
+
+.todo-list li .delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.todo-list li .delete:hover {
+    background-color: #f44336b7;
+}
+
+.todo-list li .save, .todo-list li .cancel {
+    background-color: #4CAF50;
+    color: white;
+}
+.todo-list li .save:hover, .todo-list li .cancel:hover {
+    background-color: #4caf4fc0;
+}
+
+.hidden {
+    display: none;
+}
